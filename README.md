@@ -4,7 +4,7 @@ xLCB plugin for x64dbg
 xLCB v1 plugin by ThunderCls - 2016
 Blog: http://reversec0de.wordpress.com
 
-xLCB mimics the function of the original LCB plugin for OllyDbg created by scherzo. In this case, xLCB is a plugin for the x64dbg x86/x64 debugger by Mr.Exodia. 
+xLCB mimics the function of the original LCB plugin for OllyDbg created by scherzo. In this case, xLCB is a plugin for the x64dbg x86/x64 debugger by @mrexodia
 
 Installation:
  - Copy xLCB.dp32 to x32 plugins directory of x64dbg
