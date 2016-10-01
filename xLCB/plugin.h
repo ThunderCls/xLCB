@@ -1,0 +1,41 @@
+#ifndef _PLUGIN_H
+#define _PLUGIN_H
+
+#include "xLCB.h"
+
+//menu identifiers
+#define MENU_SEPARATOR 0
+#define MENU_ABOUT 1
+
+#define MENU_COMMENTS_EXPORT 2
+#define MENU_COMMENTS_IMPORT 3
+#define MENU_COMMENTS_CLEAR  4
+
+#define MENU_LABELS_EXPORT 5
+#define MENU_LABELS_IMPORT 6
+#define MENU_LABELS_CLEAR 7
+
+#define MENU_BP_EXPORT 8
+#define MENU_BP_IMPORT 9
+
+
+#define MENU_ABOUT_DISASM 11
+
+#define MENU_COMMENTS_EXPORT_DISASM 12
+#define MENU_COMMENTS_IMPORT_DISASM 13
+#define MENU_COMMENTS_CLEAR_DISASM 14
+
+#define MENU_LABELS_EXPORT_DISASM 15
+#define MENU_LABELS_IMPORT_DISASM 16
+#define MENU_LABELS_CLEAR_DISASM 17
+
+#define MENU_BP_EXPORT_DISASM 18
+#define MENU_BP_IMPORT_DISASM 19
+
+
+//functions
+void pluginInit(PLUG_INITSTRUCT* initStruct);
+void pluginStop();
+void pluginSetup();
+
+#endif // _PLUGIN_H
