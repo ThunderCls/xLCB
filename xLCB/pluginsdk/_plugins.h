@@ -176,6 +176,12 @@ typedef struct
     int loadSaveType;
 } PLUG_CB_LOADSAVEDB;
 
+typedef struct
+{
+    const char* symbol;
+    bool retval;
+} PLUG_CB_FILTERSYMBOL;
+
 //enums
 typedef enum
 {
@@ -201,14 +207,16 @@ typedef enum
     CB_WINEVENT, //PLUG_CB_WINEVENT
     CB_WINEVENTGLOBAL, //PLUG_CB_WINEVENTGLOBAL
     CB_LOADDB, //PLUG_CB_LOADSAVEDB
-    CB_SAVEDB //PLUG_CB_LOADSAVEDB
+    CB_SAVEDB, //PLUG_CB_LOADSAVEDB
+    CB_FILTERSYMBOL, //PLUG_CB_FILTERSYMBOL
+    CB_LAST
 } CBTYPE;
 
 //typedefs
 typedef void (*CBPLUGIN)(CBTYPE cbType, void* callbackInfo);
 typedef bool (*CBPLUGINCOMMAND)(int argc, char** argv);
 typedef void (*CBPLUGINSCRIPT)();
-typedef duint (*CBPLUGINEXPRFUNCTION)(int argc, duint* argv, void* userdata);
+typedef duint(*CBPLUGINEXPRFUNCTION)(int argc, duint* argv, void* userdata);
 
 //exports
 #ifdef __cplusplus
@@ -234,6 +242,8 @@ PLUG_IMPEXP void _plugin_startscript(CBPLUGINSCRIPT cbScript);
 PLUG_IMPEXP bool _plugin_waituntilpaused();
 PLUG_IMPEXP bool _plugin_registerexprfunction(int pluginHandle, const char* name, int argc, CBPLUGINEXPRFUNCTION cbFunction, void* userdata);
 PLUG_IMPEXP bool _plugin_unregisterexprfunction(int pluginHandle, const char* name);
+PLUG_IMPEXP bool _plugin_unload(const char* pluginName);
+PLUG_IMPEXP bool _plugin_load(const char* pluginName);
 
 #ifdef __cplusplus
 }
